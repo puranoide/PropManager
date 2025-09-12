@@ -234,6 +234,7 @@ document.querySelectorAll('.nav-cta, .btn-primary').forEach(button => {
     });
 });
 
+
 // Add CSS animations for notifications
 const style = document.createElement('style');
 style.textContent = `
@@ -248,3 +249,26 @@ style.textContent = `
             }
         `;
 document.head.appendChild(style);
+
+
+
+const closeBtn = document.getElementById("closePopupBtn");
+const overlay = document.getElementById("popupOverlay");
+// Abrir popup
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        overlay.style.display = "flex";
+    }, 2000);
+})
+
+// Cerrar popup con botón
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+// Cerrar popup al hacer clic fuera
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+    }
+});
