@@ -154,6 +154,10 @@ td {
     text-align: left;
     padding: .75rem;
 }
+td:hover{
+    cursor: pointer;
+    background-color: var(--accent);
+}
 tbody tr:nth-child(even) {
     background: #151515;
 }
