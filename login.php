@@ -47,14 +47,14 @@
         <form class="login-form" id="loginForm">
             <div class="form-group">
                 <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" class="form-input" placeholder="tu@email.com" required>
+                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="password">Contraseña</label>
                 <div style="position: relative;">
-                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
-                    <button type="button" class="password-toggle" id="togglePassword">
+                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required>
+                    <button type="button" class="password-toggle" id="togglePassword" onclick="togglePasswordVisibility()">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor"
                                 stroke-width="2" />
@@ -134,7 +134,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/interactive.js"></script>
+    <script src="assets/js/login.js"></script>
 
 </body>
 
