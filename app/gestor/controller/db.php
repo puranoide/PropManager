@@ -10,6 +10,7 @@ $username = "root";
 $password = "";
 $dbname = "consultame"; 
 
+
 $servername = "localhost";
 $username = "u685818680_gabrieladmin02";
 $password = "7|Pvfsp~WjP";

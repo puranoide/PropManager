@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+/*
+echo "<pre>";
+print_r( $_SESSION);
+echo "</pre>";
+*/
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +18,8 @@
 </head>
 <body>
   <div class="dashboard">
-    
+    <!--aca va el id del usuario para el backend -->
+    <span style="display: none;" id="userId"><?php echo $_SESSION['id'];?></span>
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <h2 class="logo">PropManager</h2>
@@ -31,7 +41,7 @@
         <button class="menu-btn" id="menu-btn"><i class="ri-menu-line"></i></button>
         <h1>Panel de Control</h1>
         <div class="user">
-          <span>Gabriel</span>
+          <span><?php echo $_SESSION['nombre'];?></span>
           <img src="https://i.pravatar.cc/40" alt="Usuario">
         </div>
       </header>

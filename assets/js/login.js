@@ -59,12 +59,12 @@ function validarestadousuario(data) {
 
 }
 
-function redireccion(tipodeusuario){
+function redireccion(tipodeusuario) {
     if (tipodeusuario == 1) {
         console.log("gestor");
-        //window.location.href = "indexAdmin.php";
-    }else{
-        //window.location.href = "index.php";
+        window.location.href = "app/gestor/index.php";
+    } else {
+        window.location.href = "app/inquilino/index.php";
         console.log("inquilino");
     }
 

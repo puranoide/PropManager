@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const sidebar = document.getElementById("sidebar");
@@ -56,3 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
     propertyForm.reset();
   });
 });
+ */
+
+const iduser=document.getElementById("userId").textContent;
+
+function listarPropiedades(iduser){
+  fetch("controller/inmobiliaria.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ "action": "listarByUser", "iduser": iduser }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        //console.log("respuesta exitosa,sesion creada");
+        console.log("respuesta :", data);
+      } else {
+        console.log("login fallido");
+        alert(data.message);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+listarPropiedades(iduser);
