@@ -25,9 +25,6 @@ echo "</pre>";
       <h2 class="logo">PropManager</h2>
       <nav>
         <a href="#" class="active"><i class="ri-home-5-line"></i> Propiedades</a>
-        <a href="#"><i class="ri-user-3-line"></i> Inquilinos</a>
-        <a href="#"><i class="ri-user-3-line"></i> servicios</a>
-        <a href="#"><i class="ri-user-3-line"></i> personal</a>
         <a href="#"><i class="ri-bar-chart-line"></i> Reportes</a>
         <a href="#"><i class="ri-settings-3-line"></i> Configuración</a>
       </nav>

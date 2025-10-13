@@ -97,6 +97,10 @@ function mostrarPropiedades(edificios) {
     <td><span class="status ${edificios[i].estadopropiedadfk === 1 ? "available" : "sold"}">${edificios[i].estadopropiedadfk === 1 ? "activo" : "inactivo"}</span></td>
     `;
     document.getElementById("propertyTableBody").appendChild(tr);
+    tr.onclick = function () {
+      //window.location.href = "propiedad.php?id=" + edificios[i].id;
+      alert(edificios[i].id);
+    }
   }
 
 }
