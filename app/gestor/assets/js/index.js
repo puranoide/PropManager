@@ -59,9 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
  */
 
-const iduser=document.getElementById("userId").textContent;
+const iduser = document.getElementById("userId").textContent;
 
-function listarPropiedades(iduser){
+function listarPropiedades(iduser) {
   fetch("controller/inmobiliaria.php", {
     method: "POST",
     headers: {
@@ -73,15 +73,38 @@ function listarPropiedades(iduser){
     .then((data) => {
       if (data.success) {
         //console.log("respuesta exitosa,sesion creada");
-        console.log("respuesta :", data);
+        //console.log("respuesta funcion listarPropiedades :", data);
+        mostrarPropiedades(data.edificios);
+
+        console.log("cantidad de propiedades:", conteoPropiedades(data.edificios));
+        mostrarConteoEdificios(conteoPropiedades(data.edificios));
       } else {
-        console.log("login fallido");
+        console.log("extracion de propiedades fallido");
         alert(data.message);
       }
     })
     .catch((error) => {
       console.log(error);
     });
+}
+function mostrarPropiedades(edificios) {
+  console.log(edificios);
+  for (let i = 0; i < edificios.length; i++) {
+    var tr = document.createElement("tr");
+    tr.innerHTML = `
+    <td>${edificios[i].id}</td>
+    <td>${edificios[i].direccionPropiedad}</td>
+    <td><span class="status ${edificios[i].estadopropiedadfk === 1 ? "available" : "sold"}">${edificios[i].estadopropiedadfk === 1 ? "activo" : "inactivo"}</span></td>
+    `;
+    document.getElementById("propertyTableBody").appendChild(tr);
+  }
+
+}
+function conteoPropiedades(edificios) {
+  return edificios.length;
+}
+function mostrarConteoEdificios(cantidadEdificios){
+  document.getElementById("totalProperties").textContent = cantidadEdificios;
 }
 
 listarPropiedades(iduser);

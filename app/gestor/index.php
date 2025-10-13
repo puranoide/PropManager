@@ -50,7 +50,7 @@ echo "</pre>";
       <section class="cards">
         <div class="card">
           <h3>Total Propiedades</h3>
-          <p>124</p>
+          <p id="totalProperties"></p>
         </div>
         <div class="card">
           <h3>Inquilinos Activos</h3>
@@ -80,23 +80,11 @@ echo "</pre>";
       <tr>
         <th>ID</th>
         <th>Dirección</th>
-        <th>Precio</th>
         <th>Estado</th>
       </tr>
     </thead>
     <tbody id="propertyTableBody">
-      <tr>
-        <td>#001</td>
-        <td>Av. Principal 123</td>
-        <td>$150,000</td>
-        <td><span class="status available">Disponible</span></td>
-      </tr>
-      <tr>
-        <td>#002</td>
-        <td>Calle Falsa 456</td>
-        <td>$210,000</td>
-        <td><span class="status sold">Vendido</span></td>
-      </tr>
+      
     </tbody>
   </table>
 </section>
