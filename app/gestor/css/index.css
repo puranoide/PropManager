@@ -1,0 +1,174 @@
+/* ==== Reset ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    background: #0e0f11;
+    color: #fff;
+}
+
+/* ==== Sidebar ==== */
+.sidebar {
+    width: 240px;
+    background: #111317;
+    height: 100vh;
+    padding: 25px;
+    border-right: 1px solid #1f1f1f;
+    position: fixed;
+    left: 0;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    color: #4dd2ff;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 12px 0;
+    color: #9ea1a6;
+    text-decoration: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.sidebar nav a:hover, 
+.sidebar nav a.active {
+    color: #4dd2ff;
+}
+
+/* ==== Main ==== */
+.main {
+    margin-left: 240px;
+    padding: 25px;
+    width: 100%;
+}
+
+/* ==== Topbar ==== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search {
+    padding: 10px 14px;
+    background: #1a1d22;
+    border: 1px solid #2c2c2c;
+    border-radius: 6px;
+    color: #fff;
+    outline: none;
+}
+
+/* ==== Tarjetas ==== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #14161b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #1e1e1e;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: #4dd2ff;
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    color: #4dd2ff;
+}
+
+/* ==== Tabla ==== */
+main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+main table thead tr {
+    background-color: #4dd2ff;
+    color: #ffffff;
+}
+
+main table th,
+main table td {
+    padding: 12px 15px;
+}
+
+main table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+main table tbody tr:last-of-type {
+    border-bottom: 2px solid #4dd2ff;
+}
+
+/* ==== Botón hamburguesa ==== */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 1100;
+    background: #14161b;
+    color: #4dd2ff;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ==== Overlay ==== */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 900;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 820px) {
+    .sidebar {
+        left: -260px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
