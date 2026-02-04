@@ -11,14 +11,14 @@
 
     <div class="flex h-screen overflow-hidden">
         
-        <aside class="w-64 bg-slate-900 text-white flex flex-col shadow-xl">
+        <aside class="w-64 bg-slate-900 text-white flex flex-col">
             <div class="p-6 text-2xl font-bold border-b border-slate-800">
                 <span class="text-blue-400">Prop</span>Manager
             </div>
             <nav class="flex-1 p-4 space-y-2">
-                <a href="index.php" class="flex items-center p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-chart-line mr-3"></i> Dashboard</a>
-                <a href="inmuebles.php" class="flex items-center p-3 bg-blue-600 rounded-lg shadow-lg"><i class="fas fa-building mr-3"></i> Inmuebles</a>
-                <a href="#" class="flex items-center p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-file-invoice-dollar mr-3"></i> Finanzas</a>
+                <a href="index.php" class="flex items-center p-3 bg-blue-600 rounded-lg"><i class="fas fa-chart-line mr-3"></i> Dashboard</a>
+                <a href="inmuebles.php" class="flex items-center p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-building mr-3"></i> Inmuebles</a>
+                <a href="mailinginquilinos.php" class="flex items-center p-3 hover:bg-slate-800 rounded-lg transition"><i class="fas fa-envelope mr-1"></i> Mailing</a>
             </nav>
         </aside>
 
