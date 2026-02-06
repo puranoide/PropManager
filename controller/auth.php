@@ -5,7 +5,7 @@ function login($conexion, $correo, $contraseña)
     $correo = mysqli_real_escape_string($conexion, $correo);
     $contraseña = mysqli_real_escape_string($conexion, $contraseña);
     $usuario = [];
-    $query = "SELECT id, correo, nombres, apellidos, fechaDeCreacion, tipoUsuariofk, estadousuariofk FROM usuario WHERE correo = ? AND contraseña = ?";
+    $query = "SELECT id, email,rol_id FROM usuarios WHERE email = ? AND password = ?";
     $stmt = mysqli_prepare($conexion, $query);
     mysqli_stmt_bind_param($stmt, "ss", $correo, $contraseña);
     mysqli_stmt_execute($stmt);
@@ -14,16 +14,11 @@ function login($conexion, $correo, $contraseña)
         $row = mysqli_fetch_assoc($result);
         session_start();
         $_SESSION['id'] = $row['id'];
-        $_SESSION['correo'] = $row['correo'];
-        $_SESSION['nombre'] = $row['nombres'];
-        $_SESSION['apellidos'] = $row['apellidos'];
-        $_SESSION['fechaDeCreacion'] = $row['fechaDeCreacion'];
-        $_SESSION['tipoUsuariofk'] = $row['tipoUsuariofk'];
-        $_SESSION['estadousuariofk'] = $row['estadousuariofk'];
-        
+        $_SESSION['email'] = $row['email'];
         mysqli_stmt_close($stmt);
         return $row; // Devuelve el array con los datos del usuario
-    } else {
+    }
+    else {
         mysqli_stmt_close($stmt);
         return false;
     }
@@ -62,11 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $response = login($conexion, $data['email'], $data['password']);
                 if ($response) {
-                    echo json_encode(['success' => 'login exitoso','usuario' => $response]);
-                } else {
+                    echo json_encode(['success' => 'login exitoso', 'usuario' => $response]);
+                }
+                else {
                     echo json_encode(['error' => 'login fallido', 'message' => "Correo o contraseña incorrectos"]);
                 }
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 echo json_encode(['error' => $e->getMessage()]);
             }
             break;
@@ -75,11 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response = logout();
             if ($response) {
                 echo json_encode(['success' => 'logout exitoso', 'message' => 'Sesión cerrada correctamente']);
-            } else {
+            }
+            else {
                 echo json_encode(['error' => 'logout fallido']);
             }
             break;
-            default:
+        default:
             echo json_encode(['success' => false, 'message' => 'Acción no válida']);
             break;
     }

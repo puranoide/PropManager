@@ -29,7 +29,7 @@ function login(email, password) {
             if (data.success) {
                 console.log("respuesta exitosa,sesion creada");
                 console.log("respuesta :", data);
-                validarestadousuario(data);
+                redireccion(data.usuario.rol_id);
             } else {
                 console.log("login fallido");
                 alert(data.message);
@@ -60,11 +60,11 @@ function validarestadousuario(data) {
 }
 
 function redireccion(tipodeusuario) {
-    if (tipodeusuario == 1) {
+    if (tipodeusuario == "1") {
         console.log("gestor");
         window.location.href = "app/gestor/index.php";
-    } else {
-        window.location.href = "app/inquilino/index.php";
+    } else if (tipodeusuario == "2") {
+        window.location.href = "app/usuario/index.php";
         console.log("inquilino");
     }
 

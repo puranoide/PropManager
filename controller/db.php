@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "propmanagerlocal";
+$dbname = "propmanager";
 // Create connection
 /*
 $servername = "localhost";
