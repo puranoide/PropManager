@@ -61,11 +61,11 @@ function validarestadousuario(data) {
 
 function redireccion(tipodeusuario) {
     if (tipodeusuario == "1") {
-        console.log("gestor");
-        window.location.href = "app/gestor/index.php";
+        console.log("admin");
+        window.location.href = "app/admin/index.php";
     } else if (tipodeusuario == "2") {
-        window.location.href = "app/usuario/index.php";
-        console.log("inquilino");
+        window.location.href = "app/usuario/gestor.php";
+        console.log("gestor");
     }
 
 }
